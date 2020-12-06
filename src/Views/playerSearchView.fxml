@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PlayerSearchController">
+    <children>
+        <VBox spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="79.0" prefWidth="1000.0" spacing="5.0">
+                    <children>
+                        <Label text="Enter a Player name" />
+                        <TextField fx:id="searchTextField" />
+                        <Button mnemonicParsing="false" onAction="#searchButton" text="Get Player List" />
+                    </children>
+                </HBox>
+                <HBox spacing="10.0">
+                    <children>
+                        <ListView fx:id="listView" prefHeight="263.0" prefWidth="960.0" />
+                        <StackPane id="stackPane" />
+                    </children>
+                </HBox>
+                <HBox spacing="60.0">
+                    <children>
+                        <Label fx:id="totalMoviesLabel" text="Players Matching Name:" />
+                        <Label fx:id="numberShowingLabel" text="Number of players showing:" />
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>
