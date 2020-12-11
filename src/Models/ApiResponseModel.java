@@ -3,6 +3,10 @@ package Models;
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * This method will get data from api and store it in private vaaariables
+ */
+
 public class ApiResponseModel {
 
     @SerializedName("data")

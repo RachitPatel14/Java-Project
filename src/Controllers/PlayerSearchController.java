@@ -43,24 +43,36 @@ public class PlayerSearchController implements Initializable {
     private Label numberShowingLabel;
 
     @FXML
-    private Button fullPlayerStatsButton;
+    private Label positionLabel;
 
     private PlayerInfo playerInfos;
     private ApiResponseModel response;
 
     @Override
+
+    /**
+     * In initialize method everytime user click on a list-view row then scen will be refreshed
+     * with the deatils of the player
+     */
     public void initialize(URL url, ResourceBundle resourceBundle) {
         numberShowingLabel.setText("");
         totalPlayersLabel.setText("");
 
         listView.getSelectionModel().selectedItemProperty().addListener((observableValue, playerInfo, t1) -> {
-            firstNameLabel.setText("First Name :"+t1.getFirstName());
-            lastNameLabel.setText("Last Name :"+t1.getLastName());
+            firstNameLabel.setText("First Name: "+t1.getFirstName());
+            lastNameLabel.setText("Last Name: "+t1.getLastName());
+
+            if(t1.getPosition() != null)
+                positionLabel.setText("Position: "+t1.getPosition());
+
             playerInfos = listView.getSelectionModel().getSelectedItem();
         });
 
     }
 
+    /**
+     * This method will take the search field input and fill the list-view
+     */
     @FXML
     private void searchButton()
     {
@@ -78,6 +90,9 @@ public class PlayerSearchController implements Initializable {
         updateScene();
     }
 
+    /**
+     * This method will update the scene with the rows of players being matched with the search text-field
+     */
     private void updateScene()
     {
         listView.getItems().clear();
@@ -85,8 +100,14 @@ public class PlayerSearchController implements Initializable {
         listView.getItems().addAll(response.getPlayers());
         numberShowingLabel.setText("Total Number of rows in Table: "+listView.getItems().size());
     }
+
+    /**
+     * This method will change the scene to show full player detail in another scene.
+     * @param event
+     * @throws IOException
+     */
     @FXML
-    public void Scene(ActionEvent event) throws IOException {
+    public void changeSceneToSelectedPlayerInfo(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../Views/fullPlayerView.fxml"));
@@ -96,9 +117,15 @@ public class PlayerSearchController implements Initializable {
         c.unitData(playerInfos);
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
+        stage.setTitle("NBA Player Full Detail");
         stage.show();
     }
 
+    /**
+     * When the user return from full player detail scene then the list-view will be populated with the context
+     * that searched before.
+     * @param searchText
+     */
     @FXML
     public void fillTheScene(String searchText)
     {

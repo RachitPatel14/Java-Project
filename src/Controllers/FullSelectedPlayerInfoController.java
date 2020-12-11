@@ -50,22 +50,28 @@ public class FullSelectedPlayerInfoController implements Initializable {
     private PlayerInfo playerInfo;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle) { }
 
-
-
-    }
-
-
+    /**
+     * This method will fill all the label with a player return from another scene.
+     * @param selectedPlayerInfo
+     */
     public void unitData(PlayerInfo selectedPlayerInfo) {
         playerInfo = selectedPlayerInfo;
         JsonObject teamInfo = selectedPlayerInfo.getTeamInfo();
 
         firstNameLabel.setText("First Name:"+ selectedPlayerInfo.getFirstName());
         lastNameLabel.setText("Last Name:"+ selectedPlayerInfo.getLastName());
+
+        if(selectedPlayerInfo.getPosition() != null)
         positionLabel.setText("Position:"+ selectedPlayerInfo.getPosition());
+
+        if(selectedPlayerInfo.getHeightInches() != null)
         heightLabel.setText("height:"+ selectedPlayerInfo.getHeightInches()+" inch");
+
+        if(selectedPlayerInfo.getWeight() != null)
         weightLabel.setText("Weight:"+ selectedPlayerInfo.getWeight()+" lb");
+
         teamNameLabel.setText("Team Name:"+ teamInfo.get("full_name"));
         cityLabel.setText("City:"+ teamInfo.get("city"));
         conferenceLabel.setText("Conference:"+ teamInfo.get("conference"));
@@ -74,7 +80,13 @@ public class FullSelectedPlayerInfoController implements Initializable {
 
     }
 
-    public void changeSceneToPlayerSearch(javafx.event.ActionEvent event) throws IOException {
+    /**
+     * This method will change the scene and also return a string as a serach text to fill the list-view with similar players.
+     * @param event
+     * @throws IOException
+     */
+    public void changeSceneToPlayerSearch(javafx.event.ActionEvent event) throws IOException
+    {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../Views/playerSearchView.fxml"));
         Parent parent = loader.load();

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="762.0" stylesheets="styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PlayerSearchController">
+<AnchorPane prefHeight="400.0" prefWidth="762.0" styleClass="box" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PlayerSearchController">
     <children>
         <VBox prefWidth="704.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -20,31 +20,31 @@
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                        <TextField fx:id="searchTextField" />
-                        <Button mnemonicParsing="false" onAction="#searchButton" text="Get Player List" />
+                        <TextField fx:id="searchTextField" prefHeight="41.0" prefWidth="354.0" promptText="Enter Player name here!" styleClass="bevel-grey" />
+                        <Button mnemonicParsing="false" onAction="#searchButton" styleClass="bevel-grey" text="Get Player List" />
                     </children>
                 </HBox>
                 <HBox prefHeight="268.0" prefWidth="722.0" spacing="10.0">
                     <children>
                         <ListView fx:id="listView" prefHeight="225.0" prefWidth="488.0" />
-                  <VBox alignment="CENTER" prefHeight="246.0" prefWidth="209.0" spacing="20.0">
+                  <VBox alignment="CENTER" prefHeight="239.0" prefWidth="299.0" spacing="20.0" styleClass="box">
                      <children>
-                        <Label fx:id="firstNameLabel" prefHeight="27.0" prefWidth="200.0" text="First Name : ">
+                        <Label fx:id="firstNameLabel" prefHeight="27.0" prefWidth="225.0" text="First Name : " wrapText="true">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lastNameLabel" prefHeight="27.0" prefWidth="200.0" text="Last Name :">
+                        <Label fx:id="lastNameLabel" prefHeight="27.0" prefWidth="225.0" text="Last Name :" wrapText="true">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="positionLabel" prefHeight="27.0" prefWidth="200.0" text="Position :">
+                        <Label fx:id="positionLabel" prefHeight="27.0" prefWidth="225.0" text="Position :" wrapText="true">
                            <font>
-                              <Font size="18.0" />
+                              <Font size="16.0" />
                            </font>
                         </Label>
-                        <Button fx:id="fullPlayerStatsButton" mnemonicParsing="false" onAction="#Scene" text="Get a full stats of selected player" />
+                        <Button fx:id="fullPlayerStatsButton1" layoutX="60.0" layoutY="180.0" mnemonicParsing="false" onAction="#changeSceneToSelectedPlayerInfo" styleClass="bevel-grey" text="Player Full Detail" />
                      </children>
                   </VBox>
                     </children>
@@ -53,11 +53,11 @@
                     <children>
                         <Label fx:id="totalPlayersLabel" prefHeight="30.0" prefWidth="200.0" text="Players Matching Name:">
                      <font>
-                        <Font size="14.0" />
+                        <Font size="16.0" />
                      </font></Label>
-                        <Label fx:id="numberShowingLabel" prefHeight="30.0" prefWidth="225.0" text="Number of players showing:">
+                        <Label fx:id="numberShowingLabel" prefHeight="30.0" prefWidth="300.0" text="Number of players showing:">
                      <font>
-                        <Font size="14.0" />
+                        <Font size="16.0" />
                      </font></Label>
                     </children>
                 </HBox>

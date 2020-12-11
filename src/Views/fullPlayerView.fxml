@@ -8,78 +8,81 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="1000.0" stylesheets="styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FullSelectedPlayerInfoController">
+<AnchorPane prefHeight="375.0" prefWidth="1004.0" styleClass="box" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FullSelectedPlayerInfoController">
    <children>
-      <HBox layoutY="-1.0" prefHeight="300.0" prefWidth="1000.0">
+      <HBox layoutY="-1.0" prefHeight="300.0" prefWidth="1004.0">
          <children>
-            <VBox prefHeight="300.0" prefWidth="500.0" spacing="10.0">
+            <VBox alignment="CENTER" prefHeight="300.0" prefWidth="500.0" spacing="10.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" text="Player Details">
                      <font>
                         <Font size="24.0" />
                      </font>
                      <VBox.margin>
-                        <Insets bottom="20.0" left="70.0" />
+                        <Insets />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="firstNameLabel" prefHeight="35.0" prefWidth="420.0" text="First Name:">
+                  <Label fx:id="firstNameLabel" prefHeight="35.0" prefWidth="400.0" text="First Name:" wrapText="true">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lastNameLabel" prefHeight="35.0" prefWidth="420.0" text="Last Name:">
+                  <Label fx:id="lastNameLabel" prefHeight="35.0" prefWidth="400.0" text="Last Name:" wrapText="true">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="positionLabel" prefHeight="35.0" prefWidth="420.0" text="Position:">
+                  <Label fx:id="positionLabel" prefHeight="35.0" prefWidth="350.0" text="Position:" wrapText="true">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="heightLabel" prefHeight="35.0" prefWidth="420.0" text="Height:">
+                  <Label fx:id="heightLabel" prefHeight="35.0" prefWidth="350.0" text="Height:" wrapText="true">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="weightLabel" layoutX="10.0" layoutY="237.0" prefHeight="35.0" prefWidth="420.0" text="Weight:">
+                  <Label fx:id="weightLabel" layoutX="10.0" layoutY="237.0" prefHeight="35.0" prefWidth="350.0" text="Weight:" wrapText="true">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
                </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
             </VBox>
-            <VBox prefHeight="400.0" prefWidth="500.0" spacing="10.0">
+            <VBox alignment="CENTER" prefHeight="300.0" prefWidth="500.0" spacing="10.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" text="Team Details">
                      <VBox.margin>
-                        <Insets bottom="20.0" left="70.0" />
+                        <Insets />
                      </VBox.margin>
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="teamNameLabel" prefHeight="35.0" prefWidth="420.0" text="Team Name:">
+                  <Label fx:id="teamNameLabel" prefHeight="35.0" prefWidth="450.0" text="Team Name:">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="cityLabel" layoutX="10.0" layoutY="75.0" prefHeight="35.0" prefWidth="420.0" text="City:">
+                  <Label fx:id="cityLabel" layoutX="10.0" layoutY="75.0" prefHeight="35.0" prefWidth="350.0" text="City:" wrapText="true">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="conferenceLabel" layoutX="10.0" layoutY="120.0" prefHeight="35.0" prefWidth="420.0" text="Conference:">
+                  <Label fx:id="conferenceLabel" layoutX="10.0" layoutY="120.0" prefHeight="35.0" prefWidth="350.0" text="Conference:" wrapText="true">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="divisionLabel" layoutX="10.0" layoutY="165.0" prefHeight="35.0" prefWidth="420.0" text="Division:">
+                  <Label fx:id="divisionLabel" layoutX="10.0" layoutY="165.0" prefHeight="35.0" prefWidth="350.0" text="Division:" wrapText="true">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="abbreviationLabel" layoutX="10.0" layoutY="210.0" prefHeight="35.0" prefWidth="420.0" text="Abbreviation:">
+                  <Label fx:id="abbreviationLabel" layoutX="10.0" layoutY="210.0" prefHeight="35.0" prefWidth="350.0" text="Abbreviation:" wrapText="true">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -90,7 +93,7 @@
       </HBox>
       <HBox alignment="CENTER" layoutX="4.0" layoutY="299.0" prefHeight="60.0" prefWidth="1000.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#changeSceneToPlayerSearch" text="Go Back">
+            <Button mnemonicParsing="false" onAction="#changeSceneToPlayerSearch" styleClass="shiny-orange" text="Go Back">
                <font>
                   <Font size="18.0" />
                </font>
