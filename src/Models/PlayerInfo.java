@@ -1,5 +1,6 @@
 package Models;
 
+import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
 
 public class PlayerInfo {
@@ -22,11 +23,14 @@ public class PlayerInfo {
     @SerializedName("position")
     private String position;
 
+    @SerializedName("team")
+    private JsonObject teamInfo;
+
 
     @SerializedName("weight_pounds")
     private String weight;
 
-    public PlayerInfo(String playerID, String firstName, String heightFeet, String heightInches, String lastName, String position, String weight) {
+    public PlayerInfo(String playerID, String firstName, String heightFeet, String heightInches, String lastName, String position, JsonObject teamInfo, String weight) {
         setPlayerID(playerID);
         setFirstName(firstName);
         setHeightFeet(heightFeet);
@@ -44,6 +48,7 @@ public class PlayerInfo {
         setHeightInches(heightInches);
         setLastName(lastName);
         setPosition(position);
+        setTeamInfo(teamInfo);
         setWeight(weight);
     }
 
@@ -95,6 +100,13 @@ public class PlayerInfo {
         this.position = position;
     }
 
+    public JsonObject getTeamInfo() {
+        return teamInfo;
+    }
+
+    public void setTeamInfo(JsonObject teamInfo) {
+        this.teamInfo = teamInfo;
+    }
 
     public String getWeight() {
         return weight;
@@ -106,6 +118,6 @@ public class PlayerInfo {
 
     public String toString()
     {
-        return String.format("first Name:%S and last Name:%s",firstName, lastName);
+        return String.format("first Name:%S and last Name:%s ",firstName, lastName);
     }
 }

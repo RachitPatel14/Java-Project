@@ -1,5 +1,6 @@
 package Models;
 
+import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
 
 public class ApiResponseModel {
@@ -7,8 +8,8 @@ public class ApiResponseModel {
     @SerializedName("data")
     private PlayerInfo[] players;
 
-    @SerializedName("total_count")
-    private String totalResults;
+    @SerializedName("meta")
+    private JsonObject totalResults;
 
     public PlayerInfo[] getPlayers() {
         return players;
@@ -18,11 +19,11 @@ public class ApiResponseModel {
         this.players = players;
     }
 
-    public String getTotalResults() {
+    public JsonObject getTotalResults() {
         return totalResults;
     }
 
-    public void setTotalResults(String totalResults) {
+    public void setTotalResults(JsonObject totalResults) {
         this.totalResults = totalResults;
     }
 }
