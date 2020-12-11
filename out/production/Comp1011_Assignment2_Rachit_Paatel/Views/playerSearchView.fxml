@@ -44,7 +44,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Button mnemonicParsing="false" onAction="#getFullStats" text="Get a full stats of selected player" />
+                        <Button fx:id="fullPlayerStatsButton" mnemonicParsing="false" onAction="#Scene" text="Get a full stats of selected player" />
                      </children>
                   </VBox>
                     </children>
